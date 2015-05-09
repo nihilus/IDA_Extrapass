@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{7b45c460-c1d7-49e7-a99d-ba3aa705e320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{3e9fc6bb-d9a5-4218-94bf-2da5cb666cb7}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Doc">
+      <UniqueIdentifier>{7debda30-4945-4924-bdad-43b573ff9ab0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utility.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="complete_ogg.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ContainersInl.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="IdaOgg.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="SegSelect.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitBoxEx.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ExtraPass.txt">
+      <Filter>Doc</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
