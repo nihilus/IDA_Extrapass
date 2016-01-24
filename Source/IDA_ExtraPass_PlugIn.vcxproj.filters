@@ -1,36 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Misc">
-      <UniqueIdentifier>{3d01e6dc-3f3a-404a-84f8-2c7e25cbcc37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{ab88254a-b023-4645-9dff-4fe973e8aad1}</UniqueIdentifier>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{3e9fc6bb-d9a5-4218-94bf-2da5cb666cb7}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
     <Filter Include="Doc">
-      <UniqueIdentifier>{e5d6074b-9d79-46ac-b361-7f03f1ce6719}</UniqueIdentifier>
+      <UniqueIdentifier>{7debda30-4945-4924-bdad-43b573ff9ab0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Support">
+      <UniqueIdentifier>{7b45c460-c1d7-49e7-a99d-ba3aa705e320}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ContainersInl.h">
-      <Filter>Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="Utility.h">
-      <Filter>Misc</Filter>
-    </ClInclude>
     <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="complete_ogg.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projects\IDA Pro Work\IDA_Support\SupportLib\Utility.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projects\IDA Pro Work\IDA_Support\IDA_WaitEx\WaitBoxEx.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projects\IDA Pro Work\IDA_Support\IDA_SegmentSelect\SegSelect.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Projects\IDA Pro Work\IDA_Support\IDA_OggPlayer\IdaOgg.h">
+      <Filter>Support</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Utility.cpp">
-      <Filter>Misc</Filter>
-    </ClCompile>
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="..\..\Projects\IDA Pro Work\IDA_Support\SupportLib\Utility.cpp">
+      <Filter>Support</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ExtraPass.txt">
+    <Text Include="ExtraPass.txt">
       <Filter>Doc</Filter>
-    </None>
+    </Text>
   </ItemGroup>
 </Project>
