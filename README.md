@@ -1,0 +1,114 @@
+
+IDA ExtraPass plugin
+=========================================================
+An IDA Pro Win32 target clean up plug-in by Sirmabus.
+Version 3.4
+
+http://www.macromonkey.com/bb/index.php/topic,21.0.html
+https://sourceforge.net/projects/idaextrapassplugin/
+
+--= Introduction =--
+IDA Pro is an amazing reverse engineering and analysis tool but it
+could use a little help on most medium to large executable targets.
+In particular on heavy C++ OOP with many disjointed functions, ones containing
+embedded script systems with many small script bind stubs et al.
+This plug-in does an "extra pass" to help fix and cleanup the IDB.
+It can find tens of thousands missing functions and alignment blocks making
+your IDB more complete and easier to reverse.
+
+It does essentially four processing steps:
+1. Convert stray code section values to "unknown".
+2. Fix missing "align" blocks.
+3. Fix missing code bytes.
+4. Locate and fix missing/undefined functions.
+
+It's intended for, and only tested on typical MSVC and Intel complied Windows
+32bit binary executables but it might still be helpful on Delphi/Borland(r)
+and other complied targets.
+
+--= Installation =--
+Copy the plug-in to your IDA Pro "plugins" directory.
+Edit your "plugins.cfg' with a hotkey to run it as you would install any other
+plug-in. Default hot key "ALT-1".
+See IDA documentation for more on installing plug-ins.
+
+--= Running it =--
+1. Save, and, or make a backup of your IDB first.
+
+2. Invoke the plug-in.
+   Here you will have a choice of which process steps to run.
+   Normally you want them all checked, but if for example you are working on a
+   Delphi target then you might want to just use the last two to fix only
+   missing alignment blocks and functions.
+
+   By default the plug-in will look for the first ".text" code segment.
+   To manually select, click on the "Choose code segments" button.
+   Here you can do the standard CTRL, and SHIFT clicks to select multiple lines.
+   For the IDA QT It's a little different. Here select the segments you want then
+   right click on the list and choose the the "Select" option, then "Okay" to finish.
+   In the output window you will see "Segment(s) selected:" followed by the segment
+   name(s) that you selected.
+
+3. Let it run and do it's process steps.
+   It might take a while for large targets..
+
+Once completed if all goes well, there will be a number a positive "Found-
+functions:" (a before and after function count), and a lot less gray spots
+on your IDA's navigator scale bar!
+
+For best results, run the plug-in at least two times.
+On a particular rough 11mb executable 13,000 missing functions were recovered
+on the first run, then 1000 on the 2nd, and 900 on the third!
+
+
+--= Changes =--
+3.4 - April 2015  - Updated to IDA SDK 6.7 version.
+3.3 - Dec 2014    - Updated to IDA SDK 6.5 version.
+
+3.2 - Jan, 19, 2013  - 1) Fixed broken and, or, updated some custom UI elements.
+                       2) Fixed the multi-segment select feature for the non-QT version and
+                          added a working setup for the QT version too. For QT, after desired
+                          segments are selected right click on the list and do "Select"
+                          followed by the "Okay" button.
+
+3.1 - Dec, 18, 2011  - Added a "fix bad function blocks" option that will many
+                       tail blocks incorrectly placed as function head/start block.
+
+3.0 - Mar, 27, 2011  - Major performance increase, now exponentially faster.
+                       Replaced string search and process functions with binary
+                       and value flag equivalents.
+                       Added a custom code selection dialog to allow user to select
+                       code segment(s).
+                       Improvements to function analysis.
+
+2.2 - Jan, 4, 2009   - Removed the position jumps. It was nice for showing progress,
+                       but it does slow things down.
+                       Now using a fancy customized wait dialog in it's place anyhow.
+                       Added "done" audio feed back.
+                       Now built with SDK 5.3,. A few small fixes and clean ups.
+
+2.1 - Jan, 18, 2008  - Fixed an obvious issue in the missing function detection.
+                       Works much better now finding a lot more functions.
+                       When a problem function is found, it's start address is output
+                       to the log window for the user to click on and inspect and fix.
+                       Added the IDA wait dialog.
+
+2.0 - Nov, 25, 2007  - Put in the passes for alignment blocks and finding missing
+                       functions.
+                       Put a wrapper around "jump" to fix an occasional crash.
+                       Converted to VS2005 and added some speed optimizations.
+                       Added UI to allow selection of what steps to do.
+
+1.1 - Aug, 28, 20007 - Put WORD scanning back in, and now only attempts
+                       to restore code only in the final (byte) pass.
+                       This ends up  with more code recovered and makes the
+                       whole process faster.
+
+Support forum: http://www.macromonkey.com/bb/viewforum.php?f=65
+
+Terms of Use
+------------
+This software is provided "as is", without any guarantee made as to its
+suitability or fitness for any particular use. It may contain bugs, so use
+this software is at your own risk.  The author(s) no responsibly for any
+damage that may unintentionally be caused through its use.
